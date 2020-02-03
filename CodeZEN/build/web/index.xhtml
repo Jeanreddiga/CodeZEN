@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+  
+<head>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
+        <title>Projeto Code ZEN</title>
+</head>
+<body>
+  
+<h3>Produtos Cadastrados</h3>
+  
+<h3>
+          <h:form>
+                      <h:commandLink value="+ Novo Item" action="#{CatalogoController.adicionarForm}"/>
+          </h:form>
+</h3>
+  
+<h4><h:outputLabel id="oplMensagem" value="#{CatalogoController.msg}"/></h4>
+  
+<h:dataTable value="#{CatalogoController.listaCatalogos}" var="catalogo" border="1">
+  
+          <h:column>
+                      <f:facet name="header">Nome</f:facet>
+                      #{catalogo.nome}
+          </h:column>
+           
+          <h:column>
+                      <f:facet name="header">Veículo Aplicação</f:facet>
+                      #{catalogo.veiculoAplicacao}
+          </h:column>
+           
+          <h:column>
+                      <f:facet name="header">Peso Liquido</f:facet>#{catalogo.pesoLiquido}
+          </h:column>
+           
+          <h:column>
+                      <f:facet name="header">Peso Bruto</f:facet>#{catalogo.pesoBruto}
+          </h:column>
+
+  
+</h:dataTable>
+  
+</body>
+</html>

@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+       
+<h:head>    
+          <title>Cadastro de Produtos   </title>
+</h:head>
+  
+<h:body>
+  
+<h3>Formulário de Cadastro de Produtos</h3>
+  
+<h3>
+          <h:form>
+          <h:commandLink value="Listagem de Produtos" action="#{CatalogoController.listarForm}"/>
+          </h:form>
+</h3>
+  
+<h4><h:outputLabel id="oplMensagem" value="#{CatalogoController.msg}"/></h4>
+  
+<h:form>
+     <table>
+    <tr>
+        <td><h:outputText id="lnome" value="Nome:" /></td>
+        <td><h:inputText id="tnome" value="#{CatalogoController.catalogo.nome}"/></td> 
+    </tr>
+    <tr>
+        <td><h:outputText id="lveiculoAplicacao" value="Veículo Aplicação:" /></td>
+        <td><h:inputText id="tveiculoAplicacao" value="#{CatalogoController.catalogo.veiculoAplicacao}"/></td>
+    </tr>
+    <tr>
+        <td><h:outputText id="lpesoLiquido" value="Peso Liquido:" /></td>
+        <td><h:inputText id="tpesoLiquido" value="#{CatalogoController.catalogo.pesoLiquido}"/></td>
+    </tr>
+    <tr>
+        <td><h:outputText id="lpesoBruto" value="Peso Bruto:" /></td>
+        <td><h:inputText id="tpesoBruto" value="#{CatalogoController.catalogo.pesoBruto}"/></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+        <h:commandButton id="submit"  type="submit" action="#{CatalogoController.adicionarCatalogo}" value="Salvar" />
+        </td>
+    </tr>
+</table>  
+  
+</h:form>
+  
+</h:body>
+</html>
